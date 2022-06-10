@@ -1,11 +1,33 @@
-public class Celsius extends Converter {
+public class Celsius extends Convected {
 
-    Celsius(double temp, char convert) {
+    double temp;
+    String value;
+    Celsius(double temp, String value) {
+        this.temp =temp;
+        this.value= "F";
+    }
+    Celsius(){
+    }
+    @Override
+    public void setTemp(double temp) {
         this.temp = temp;
-        if (convert == 'C') {
-            System.out.println("Темература равна =" + getTempToСel() + " по цельсию");
-        } else {
-            System.out.println("Неккоректый ввод");
-        }
+    }
+
+    @Override
+    public double getTemp() {
+        System.out.println("Температура равна ");
+        temp = (temp - 32) / 1.8;
+        return temp;
+    }
+
+    @Override
+    public String getValue() {
+        System.out.println("Значение равно");
+        return value;
+    }
+
+    @Override
+    public void setValue(String value) {
+        this.value = value;
     }
 }

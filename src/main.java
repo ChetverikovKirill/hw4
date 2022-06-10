@@ -1,7 +1,12 @@
-public class main {
-    public static void main(String[] args) {
+import java.util.Scanner;
 
-        Converter converter = new Fahrenheit(24,'F');
-        Converter converter1 = new Celsius(24,'C');
+class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите значение");
+        Convected con = Convectore.convecter(scanner.next()) ;
+        System.out.println("Введите температуру");
+        con.setTemp(scanner.nextDouble());
+        System.out.println(con.getTemp());
     }
 }

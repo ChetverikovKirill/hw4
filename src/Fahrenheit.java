@@ -1,12 +1,32 @@
-public class Fahrenheit extends Converter {
+public class Fahrenheit extends Convected {
 
-    Fahrenheit(double temp, char convert) {
+    double temp;
+    String value;
+
+    Fahrenheit() {
+    }
+
+    @Override
+    public void setTemp(double temp) {
         this.temp = temp;
-        if (convert == 'F') {
-            System.out.println("Темература равна =" + getTempToFar() + " по фаренгейту");
-        } else {
-            System.out.println("Неккоректый ввод");
-        }
+    }
+
+
+    @Override
+    public double getTemp() {
+        System.out.println("Температура равна");
+        temp = temp * 1.8 + 32;
+        return temp;
+    }
+
+    @Override
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String getValue() {
+        System.out.println("Значение равно");
+        return value;
     }
 }
-
